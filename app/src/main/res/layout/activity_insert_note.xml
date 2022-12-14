@@ -1,0 +1,171 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@+id/escrever_testemunho"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <View   android:id="@+id/_bg__escrever_testemunho"
+                android:background="@drawable/_bg__escrever_testemunho_shape"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="400dp"
+                android:layout_height="800dp" />
+
+            <EditText
+                android:id="@+id/NoteTitle"
+                android:background="@drawable/rectangle_453_shape"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="112dp"
+                android:layout_width="328.14dp"
+                android:paddingLeft="5dp"
+                android:textColor="@color/black"
+                android:hint="Add a title"
+                android:layout_height="44.14dp"
+                />
+
+
+            <View   android:id="@+id/rectangle_456"
+                android:background="@drawable/rectangle_456_shape"
+                android:layout_marginStart="33.14dp"
+                android:layout_marginTop="181.69dp"
+                android:layout_width="322.86dp"
+                android:layout_height="307.31dp" />
+
+            <EditText
+                android:id="@+id/NoteDescription"
+                android:background="@drawable/rectangle_453_ek1_shape"
+                android:hint="Write your experience..."
+                android:gravity="top|left"
+                android:textColor="@color/black"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="177dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:layout_width="324dp"
+                android:layout_height="308.45dp"
+                />
+
+
+
+            <View   android:id="@+id/rectangle_454"
+                android:background="@drawable/rectangle_454_shape"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="612dp"
+                android:layout_width="286dp"
+                android:layout_height="62dp" />
+
+            <Button
+                android:id="@+id/CreateNote"
+                android:background="@drawable/rectangle_450_shape"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="606dp"
+                android:layout_width="287.54dp"
+                android:layout_height="63.54dp"
+                app:backgroundTint="@color/rectangle_450_color"
+                android:text="Post"
+                android:textColor="#333333"/>
+
+
+            <View   android:id="@+id/rectangle_450"
+                android:background="@drawable/rectangle_450_shape"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="606dp"
+                android:layout_width="287.54dp"
+                android:layout_height="63.54dp" />
+
+
+
+            <View   android:id="@+id/rectangle_454_ek1"
+                android:background="@drawable/rectangle_454_ek1_shape"
+                android:layout_marginStart="128.3dp"
+                android:layout_marginTop="514.79dp"
+                android:layout_width="109.7dp"
+                android:layout_height="39.21dp" />
+
+            <Button
+                android:background="@drawable/rectangle_450_ek1_shape"
+                android:layout_marginStart="126dp"
+                android:layout_marginTop="511dp"
+                android:layout_width="111.24dp"
+                android:layout_height="40.75dp"
+                app:backgroundTint="@color/rectangle_453_color"
+                android:text="Public"
+                android:textColor="#333333"/>
+
+
+            <View   android:id="@+id/rectangle_454_ek2"
+                android:background="@drawable/rectangle_454_ek2_shape"
+                android:layout_marginStart="246.3dp"
+                android:layout_marginTop="514.79dp"
+                android:layout_width="109.7dp"
+                android:layout_height="39.21dp" />
+
+            <Button
+                android:id="@+id/PrivateNote"
+                android:background="@drawable/rectangle_450_ek2_shape"
+                android:layout_marginStart="244dp"
+                android:layout_marginTop="511dp"
+                android:layout_width="111.24dp"
+                android:layout_height="40.75dp"
+                app:backgroundTint="@color/_bg__escrever_testemunho_color"
+                android:text="Private"
+                android:textColor="#333333"/>
+
+
+            <View   android:id="@+id/ellipse_38"
+                android:background="@drawable/ellipse_38_shape"
+                android:layout_marginStart="30.34dp"
+                android:layout_marginTop="34.34dp"
+                android:layout_width="37.66dp"
+                android:layout_height="37.66dp" />
+
+
+            <ImageButton
+                android:id="@+id/ReturnButton"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="33dp"
+                android:layout_width="37.66dp"
+                android:layout_height="37.66dp"
+                android:src="@drawable/voltar"
+                android:background="@drawable/vector"/>
+
+
+            <View   android:id="@+id/ellipse_38_ek1"
+                android:background="@drawable/ellipse_38_ek1_shape"
+                android:layout_marginStart="43dp"
+                android:layout_marginTop="432dp"
+                android:layout_width="41dp"
+                android:layout_height="42dp" />
+
+            <ImageButton
+                android:id="@+id/LoadImage"
+                android:background="@drawable/ellipse_38_ek1_shape"
+                android:src="@drawable/add_image"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="431dp"
+                android:layout_width="40.55dp"
+                app:backgroundTint="@color/rectangle_452_color"
+                android:layout_height="40.55dp"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottom_navigation"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottom_nav_menu"
+            app:labelVisibilityMode="unlabeled"
+            app:itemIconSize="32dp"
+            app:itemBackground="@color/barra_navegacao"
+            app:itemTextColor="@drawable/selector"
+            app:itemIconTint="@drawable/selector"
+            />
+
+    </LinearLayout>
+</LinearLayout>

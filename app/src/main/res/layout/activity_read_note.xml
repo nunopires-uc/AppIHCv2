@@ -1,0 +1,153 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout android:id="@+id/ler_testemunho"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <View   android:id="@+id/_bg__ler_testemunho"
+                android:background="@drawable/_bg__ler_testemunho_shape"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="400dp"
+                android:layout_height="800dp" />
+
+            <TextView   android:id="@+id/NoteTitle"
+                android:background="@drawable/rectangle_453_shape"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="255dp"
+                android:layout_width="328.14dp"
+                android:layout_height="44.14dp"
+                android:fontFamily="Inter"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                />
+
+            <!--<TextView android:id="@+id/experience_title_example"
+                android:fontFamily="Inter"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/experience_title_example_color"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="244dp"
+                android:layout_width="319.5dp"
+                android:layout_height="80.5dp"
+                android:text="@string/experience_title_example_string"
+                />-->
+
+            <!--<TextView
+                android:id="@+id/NoteTitle"
+                android:fontFamily="Inter"
+                android:textStyle="bold"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="244dp"
+                android:layout_width="319.5dp"
+                android:layout_height="80.5dp"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:textSize="15sp"
+                android:text="@string/experience_title_example_string"
+                android:textColor="@color/experience_title_example_color"
+                android:background="@drawable/rectangle_453_shape"
+                />-->
+
+
+            <View   android:id="@+id/rectangle_456"
+                android:background="@drawable/rectangle_456_shape"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="324dp"
+                android:layout_width="323dp"
+                android:layout_height="386dp" />
+
+            <TextView
+                android:id="@+id/NoteDescription"
+                android:background="@drawable/rectangle_453_ek1_shape"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="320dp"
+                android:layout_width="324.14dp"
+                android:layout_height="387.14dp"
+                android:fontFamily="Inter"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/black"
+                android:paddingRight="5dp"
+                />
+
+            <!--<TextView
+                android:id="@+id/NoteDescription"
+                android:fontFamily="Inter"
+                android:background="@drawable/rectangle_453_ek1_shape"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginLeft="44dp"
+                android:layout_marginTop="317.5dp"
+                android:layout_width="316.5dp"
+                android:layout_height="357.5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/black"
+                android:paddingRight="5dp"
+                android:text="@string/longtext"/>
+                -->
+            <View
+                android:id="@+id/ellipse_38"
+                android:background="@drawable/ellipse_38_shape"
+                android:layout_marginStart="30.34dp"
+                android:layout_marginTop="34.34dp"
+                android:layout_width="37.66dp"
+                android:layout_height="37.66dp"/>
+
+            <ImageButton
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="33dp"
+                android:layout_width="37.66dp"
+                android:layout_height="37.66dp"
+                android:src="@drawable/voltar"
+                android:background="@drawable/vector"/>
+
+            <TextView android:id="@+id/author_passenger1_date_18_10_2021"
+                android:fontFamily="Inter"
+                android:layout_gravity="center_vertical|end"
+                android:gravity="end"
+                android:textSize="15sp"
+                android:textColor="@color/experience_title_example_color"
+                android:layout_marginLeft="42dp"
+                android:layout_marginTop="650dp"
+                android:layout_width="309dp"
+                android:layout_height="48.5dp"
+                android:text="@string/author_passenger1_date_18_10_2021_string"
+                />
+
+            <ImageView android:id="@+id/gato_carolina"
+                android:src="@drawable/gato_carolina"
+                android:contentDescription="gato_carolina"
+                android:layout_marginStart="144dp"
+                android:layout_marginTop="117dp"
+                android:layout_width="98dp"
+                android:layout_height="100dp" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottom_navigation"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottom_nav_menu"
+            app:labelVisibilityMode="unlabeled"
+            app:itemIconSize="32dp"
+            app:itemBackground="@color/barra_navegacao"
+            app:itemTextColor="@drawable/selector"
+            app:itemIconTint="@drawable/selector"
+            />
+
+    </LinearLayout>
+</LinearLayout>

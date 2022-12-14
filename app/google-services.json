@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "313666730895",
+    "project_id": "appihc-5e3b4",
+    "storage_bucket": "appihc-5e3b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313666730895:android:62008fbab6689e36f8a9fa",
+        "android_client_info": {
+          "package_name": "pt.uc.dei.ihc.appihc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313666730895-rp7u8iev6opr9mb6i6h8s17ekuai4sv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIEXf9qs9X4mpQyKllcXIcrblmbQ8sbqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313666730895-rp7u8iev6opr9mb6i6h8s17ekuai4sv4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

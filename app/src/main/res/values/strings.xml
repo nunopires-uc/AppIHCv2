@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">appihc</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Figma strings -->
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="email_string">Email</string>
+    <string name="don_t_have_an_account__register_string">Don\'t have an account?</string>
+    <string name="log_in_string">Log In</string>
+    <string name="passenger_string">Passenger</string>
+    <string name="log_in_ek1_string">Log In</string>
+    <string name="password_string">Password</string>
+    <string name="get_started_string">Get Started</string>
+    <string name="your_travel_experience_companion_string">Your travel experience companion</string>
+    <string name="already_have_an_account__string">Already have an account?</string>
+    <string name="register_string">Register</string>
+    <string name="register_ek1_string">Register</string>
+    <string name="add_a_title____string">  Add a title...</string>
+    <string name="write_your_experience____string">  Write your experience...</string>
+    <string name="post_string">Post</string>
+    <string name="public_string">Public</string>
+    <string name="private_string">Private</string>
+    <string name="experience_title_example_string">  Experience title example</string>
+    <string name="longtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="author_passenger1_date_18_10_2021_string"><b>Author</b> passenger1\n<b>Date</b> 18-10-2021</string>
+    <string name="add_people_by_email____string">  Add people by email...</string>
+    <string name="add_to_post_string">Add to post</string>
+    <string name="shared_with_before_string">Shared with before</string>
+    <string name="passenger1_email_com_string">passenger1@email.com</string>
+    <string name="passenger2_email_com_string">passenger2@email.com</string>
+    <string name="passenger3_email_com_string">passenger3@email.com</string>
+    <string name="search_region____string">Search region...</string>
+
+    <string name="button_ok">ok</string>
+</resources>

@@ -1,0 +1,196 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <LinearLayout android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <View   android:id="@+id/_bg__login"
+                android:background="@drawable/_bg__login_shape"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="400dp"
+                android:layout_height="800dp" />
+
+            <View   android:id="@+id/rectangle_456"
+                android:background="@drawable/rectangle_456_shape"
+                android:layout_marginStart="33.14dp"
+                android:layout_marginTop="294dp"
+                android:layout_width="321.86dp"
+                android:layout_height="43dp" />
+
+
+
+            <!--<View   android:id="@+id/rectangle_453"
+                android:background="@drawable/rectangle_453_shape"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="290dp"
+                android:layout_width="323dp"
+                android:layout_height="44.14dp" />-->
+
+            <EditText
+                android:id="@+id/EditTextEmail"
+                android:background="@drawable/rectangle_453_shape"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="290dp"
+                android:layout_width="323dp"
+                android:textColor="@color/black"
+                android:paddingLeft="5dp"
+                android:layout_height="44.14dp"/>
+
+
+            <View   android:id="@+id/rectangle_456_ek1"
+                android:background="@drawable/rectangle_456_ek1_shape"
+                android:layout_marginStart="33.14dp"
+                android:layout_marginTop="399dp"
+                android:layout_width="321.86dp"
+                android:layout_height="43dp" />
+
+            <!--<View   android:id="@+id/rectangle_453_ek1"
+                android:background="@drawable/rectangle_453_ek1_shape"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="395dp"
+                android:layout_width="323dp"
+                android:layout_height="44.14dp" />-->
+
+            <EditText
+                android:id="@+id/EditTextPassword"
+                android:background="@drawable/rectangle_452_shape"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="395dp"
+                android:layout_width="323dp"
+                android:textColor="@color/black"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                android:layout_height="44.14dp"/>
+
+            <TextView android:id="@+id/email"
+                android:fontFamily="Inter"
+                android:textSize="15sp"
+                android:textColor="@color/rectangle_456_color"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="254dp"
+                android:layout_width="216.5dp"
+                android:layout_height="46.5dp"
+                android:text="@string/email_string"
+                />
+
+            <TextView android:id="@+id/password"
+                android:fontFamily="Inter"
+                android:textSize="15sp"
+                android:textColor="@color/rectangle_456_color"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="359dp"
+                android:layout_width="216.5dp"
+                android:layout_height="46.5dp"
+                android:text="@string/password_string"
+                />
+
+            <TextView android:id="@+id/don_t_have_an_account__register"
+                android:fontFamily="Inter"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="@color/rectangle_456_color"
+                android:layout_marginLeft="93dp"
+                android:layout_marginTop="598dp"
+                android:layout_width="218.5dp"
+                android:layout_height="45.5dp"
+                android:text="@string/don_t_have_an_account__register_string"
+                />
+
+            <TextView android:id="@+id/ButtonRegister"
+                android:fontFamily="Inter"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="@color/rectangle_456_color"
+                android:layout_marginLeft="228dp"
+                android:layout_marginTop="598dp"
+                android:layout_width="218.5dp"
+                android:layout_height="45.5dp"
+                android:text="Register"
+                />
+
+
+dani
+
+            <TextView android:id="@+id/log_in"
+                android:fontFamily="Inter"
+                android:textSize="20sp"
+                android:textColor="@color/rectangle_456_color"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="174dp"
+                android:layout_width="221dp"
+                android:layout_height="50dp"
+                android:text="@string/log_in_string"
+                />
+
+            <!--<TextView android:id="@+id/log_inRegister"
+                android:fontFamily="Inter"
+                android:textSize="20sp"
+                android:textColor="@color/rectangle_456_color"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="174dp"
+                android:layout_width="221dp"
+                android:layout_height="50dp"
+                android:text="Register"
+                />-->
+
+            <TextView android:id="@+id/passenger"
+                android:fontFamily="Inter"
+                android:textStyle="bold"
+                android:textSize="32sp"
+                android:textColor="@color/rectangle_456_color"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="128dp"
+                android:layout_width="323dp"
+                android:layout_height="58dp"
+                android:text="@string/passenger_string"
+                />
+
+            <View   android:id="@+id/rectangle_454"
+                android:background="@drawable/rectangle_454_shape"
+                android:layout_marginStart="53dp"
+                android:layout_marginTop="532dp"
+                android:layout_width="286dp"
+                android:layout_height="62dp" />
+
+            <!--<View   android:id="@+id/rectangle_450"
+                android:background="@drawable/rectangle_450_shape"
+                android:layout_marginStart="47dp"
+                android:layout_marginTop="526dp"
+                android:layout_width="287.54dp"
+                android:layout_height="63.54dp" />-->
+
+            <Button
+                android:id="@+id/ButtonLogin"
+                android:background="@drawable/rectangle_450_shape"
+                android:layout_marginStart="47dp"
+                android:layout_marginTop="526dp"
+                android:layout_width="287.54dp"
+                android:layout_height="63.54dp"
+                app:backgroundTint="@color/rectangle_450_color"
+                android:text="Log In"
+                android:textColor="#333333"
+                ></Button>
+
+            <TextView android:id="@+id/log_in_ek1"
+                android:fontFamily="Inter"
+                android:layout_gravity="center_horizontal|center"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/rectangle_456_color"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="539dp"
+                android:layout_width="299dp"
+                android:layout_height="46.5dp"
+                android:text="@string/log_in_ek1_string"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

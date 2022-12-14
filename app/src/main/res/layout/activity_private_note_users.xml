@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrivateNoteUsers">
+
+    <RelativeLayout android:id="@+id/adicionar_privado___com_pessoas_anteriores"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <View   android:id="@+id/_bg__adicionar_privado___com_pessoas_anteriores"
+                android:background="@drawable/_bg__adicionar_privado___com_pessoas_anteriores_shape"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="400dp"
+                android:layout_height="800dp" />
+
+            <View   android:id="@+id/ellipse_38"
+                android:background="@drawable/ellipse_38_shape"
+                android:layout_marginStart="30.34dp"
+                android:layout_marginTop="34.34dp"
+                android:layout_width="37.66dp"
+                android:layout_height="37.66dp" />
+
+            <ImageButton
+                android:id="@+id/ReturnButton"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="33dp"
+                android:layout_width="37.66dp"
+                android:layout_height="37.66dp"
+                android:src="@drawable/voltar"
+                android:background="@drawable/vector"/>
+
+            <View   android:id="@+id/rectangle_456"
+                android:background="@drawable/rectangle_456_shape"
+                android:layout_marginStart="33.15dp"
+                android:layout_marginTop="116dp"
+                android:layout_width="322.85dp"
+                android:layout_height="43dp" />
+
+
+            <EditText
+                android:id="@+id/AddUser"
+                android:background="@drawable/rectangle_453_shape"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="112dp"
+                android:layout_width="328.14dp"
+                android:paddingLeft="5dp"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:hint="Add an user email"
+                android:layout_height="44.14dp"
+                />
+
+            <View   android:id="@+id/rectangle_454"
+                android:background="@drawable/rectangle_454_shape"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="612dp"
+                android:layout_width="286dp"
+                android:layout_height="62dp" />
+
+
+            <Button
+                android:id="@+id/joinUsers"
+                android:background="@drawable/rectangle_450_shape"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="606dp"
+                android:layout_width="287.54dp"
+                android:layout_height="63.54dp"
+                app:backgroundTint="@color/rectangle_450_color"
+                android:text="Add users"
+                android:textColor="#333333"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:layout_marginTop="230dp"/>
+
+            <TextView android:id="@+id/shared_with_before"
+                android:fontFamily="Inter"
+                android:textSize="15sp"
+                android:textColor="@color/ellipse_38_color"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="205dp"
+                android:layout_width="216.5dp"
+                android:layout_height="46.5dp"
+                android:text="@string/shared_with_before_string"
+                />
+
+            <ListView
+                android:id="@+id/listview"
+                android:layout_marginTop="235dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:choiceMode="multipleChoice"
+                >
+            </ListView>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

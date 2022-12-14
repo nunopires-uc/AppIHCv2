@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="appPink">#FFEDE2</color>
+    <color name="_bg__login_color">#FFEDE2</color>
+    <color name="rectangle_454_color">#333333</color>
+    <color name="rectangle_450_color">#C9DAA2</color>
+    <color name="rectangle_452_color">#F9F9F9</color>
+    <color name="_bg__landing_page_color">#FFEDE2</color>
+    <color name="barra_navegacao">#FFD4B7</color>
+    <color name="_bg__registo_color">#FFEDE2</color>
+    <color name="rectangle_456_color">#333333</color>
+    <color name="rectangle_453_color">#F9F9F9</color>
+    <color name="merda">#FFD4B7</color>
+    <color name="_bg__escrever_testemunho_color">#FFEDE2</color>
+    <color name="add_a_title____color">#757575</color>
+    <color name="_bg__ler_testemunho_color">#FFEDE2</color>
+    <color name="experience_title_example_color">#333333</color>
+    <color name="_bg__adicionar_privado___com_pessoas_anteriores_color">#FFEDE2</color>
+    <color name="add_people_by_email____color">#757575</color>
+    <color name="ellipse_38_color">#333333</color>
+    <color name="_bg__mapa___com_mapa_color">#FFEDE2</color>
+    <color name="line_127_color">#333333</color>
+    <color name="search_region____color">#757575</color>
+
+
+
+
+
+
+
+
+</resources>
