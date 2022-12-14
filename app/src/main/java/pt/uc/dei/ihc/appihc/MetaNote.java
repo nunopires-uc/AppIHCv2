@@ -1,5 +1,7 @@
 package pt.uc.dei.ihc.appihc;
 
+import org.checkerframework.checker.units.qual.A;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -31,6 +33,14 @@ public class MetaNote implements Serializable {
         this.isPrivate = isPrivate;
     }
 
+    public MetaNote(Double latitude, Double longitude) {
+        Latitude = latitude;
+        Longitude = longitude;
+        HashNotes = new ArrayList<>();
+    }
+
+
+
     public Double getLatitude() {
         return Latitude;
     }
@@ -50,6 +60,11 @@ public class MetaNote implements Serializable {
     public ArrayList<DefaultNote> getHashNotes() {
         return HashNotes;
     }
+
+    public void append (DefaultNote note){
+        HashNotes.add(note);
+    }
+
 
     public void setHashNotes(ArrayList<DefaultNote> hashNotes) {
         HashNotes = hashNotes;

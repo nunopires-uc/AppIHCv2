@@ -59,7 +59,9 @@ public class NoteList extends AppCompatActivity {
                     Log.i("ni!!", note.toString());
                     Log.i("ni[sizeof()]", String.valueOf(note.getHashNotes().size()));
                     String Description, Title, to, from;
+                    boolean AreNotificationsAvailable = false;
                     for (QueryDocumentSnapshot document : task.getResult()) {
+                        AreNotificationsAvailable = true;
                         Description = (String) document.get("Description");
                         Title = (String) document.get("Title");
                         to = (String) document.get("to");
@@ -106,6 +108,21 @@ public class NoteList extends AppCompatActivity {
                             //title[i] = note.getHashNotes().get(i).getTitle();
                             //subtitle[i] = note.getHashNotes().get(i).getDescription();
                         }
+
+                    }
+
+                    if(AreNotificationsAvailable == false){
+                        for(int i=0;i<note.getHashNotes().size();i++) {
+                            ttl.add(note.getHashNotes().get(i).getTitle());
+                            DescriptionShortner = note.getHashNotes().get(i).getDescription();
+                            if(DescriptionShortner.length() > 16){
+                                DescriptionShortner = DescriptionShortner.substring(0, 16);
+                                DescriptionShortner += "...";
+                            }
+                            stl.add(DescriptionShortner);
+                            PrivateValues.add((byte) 0);
+                        }
+
 
                     }
 

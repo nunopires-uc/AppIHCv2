@@ -154,9 +154,39 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     ArrayList<HistoryClass> historyClass = new ArrayList<>();
                     ArrayList<DefaultNote> NoteOnSite = new ArrayList<>();
                     ArrayList<DefaultNote> history = new ArrayList<>();
+                    ArrayList<String> HistoryTitle = new ArrayList<>();
+                    Log.i("RamNotes", String.valueOf(CacheNotes.size()));
                     Double LatitudeOne, LongitudeOne;
                     boolean isAprivateNote = false;
-                    for (int i = 0; i < CacheNotes.size(); i++) {
+                    for(int i=0; i < CacheNotes.size(); i++){
+                        Log.i("Sf01-Title", CacheNotes.get(i).getTitle());
+                        LatitudeOne = CacheNotes.get(i).getLatitude();
+                        LongitudeOne = CacheNotes.get(i).getLongitude();
+                        MetaNote note = new MetaNote(LatitudeOne, LongitudeOne);
+                        note.append(CacheNotes.get(i));
+                        for(int j=0;j<CacheNotes.size();j++){
+                            if(!history.contains(CacheNotes.get(j))){
+                                if (CalcDistance(LatitudeOne, LongitudeOne, CacheNotes.get(j).getLatitude(), CacheNotes.get(j).getLongitude()) <= 0.0001f){
+                                    if (CacheNotes.get(j).isPrivacy()) {
+                                        isAprivateNote = true;
+                                        note.setPrivate(isAprivateNote);
+                                    }
+                                    if(!note.getHashNotes().contains(CacheNotes.get(j))){
+                                        note.append(CacheNotes.get(j));
+                                        history.add(CacheNotes.get(j));
+                                        history.add(CacheNotes.get(i));
+                                    }
+                                }
+                            }
+                        }
+                        Log.i("Sf02-Note", note.toString());
+                        metaNotes.add(note);
+                    }
+
+
+                    /*for (int i = 0; i < CacheNotes.size(); i++) {
+                            Log.i("getMyHistory", HistoryTitle.toString());
+                            Log.i("HistoryStamp", history.toString());
                             Log.i("&&dbn", CacheNotes.get(i).getTitle());
 
                             LatitudeOne = CacheNotes.get(i).getLatitude();
@@ -164,10 +194,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             Log.i("%%Lat", String.valueOf(LatitudeOne));
                             Log.i("%%Lon", String.valueOf(LongitudeOne));
                             NoteOnSite.add(CacheNotes.get(i));
+                            //
 
 
                             if(!history.contains(CacheNotes.get(i))){
-
+                                history.add(CacheNotes.get(i));
+                                HistoryTitle.add(CacheNotes.get(i).getTitle());
                                 Log.i("ll-",CacheNotes.get(i).getTitle());
                                 for (int j = 0; j < CacheNotes.size(); j++) {
                                     HistoryClass chc = new HistoryClass(CacheNotes.get(j).getLatitude(), CacheNotes.get(j).getLongitude());
@@ -178,31 +210,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                             isAprivateNote = true;
                                         }
                                         if(!NoteOnSite.contains(CacheNotes.get(j))){
-                                            NoteOnSite.add(CacheNotes.get(j));
-                                            history.add(CacheNotes.get(j));
+                                            if(!history.contains(CacheNotes.get(j))){
+                                                NoteOnSite.add(CacheNotes.get(j));
+                                                history.add(CacheNotes.get(j));
+                                                HistoryTitle.add(CacheNotes.get(j).getTitle());
+                                            }
+
+
+
                                         }
                                     }
                                 }
                                 Log.i("getHistory", history.toString());
                                 Log.i("dumpNoteOnSize", String.valueOf(NoteOnSite.size()));
                                 Log.i("dumpNoteOnSite", NoteOnSite.toString());
-                                MetaNote note = new MetaNote(LatitudeOne, LongitudeOne, (ArrayList<DefaultNote>) NoteOnSite.clone(), isAprivateNote);
+                                //MetaNote note = new MetaNote(LatitudeOne, LongitudeOne, (ArrayList<DefaultNote>) NoteOnSite.clone(), isAprivateNote);
+                                MetaNote note = new MetaNote(LatitudeOne, LongitudeOne, new ArrayList<>(NoteOnSite), isAprivateNote);
                                 metaNotes.add(note);
                                 NoteOnSite.clear();
                                 isAprivateNote = false;
                             }
+                    }*/
 
-
-
-                            //
-                    }
-
+                    Log.i("GiveMeMetaNotes", metaNotes.toString());
                     db.collection("notifications").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            Log.i("O outro lado xx", "");
+                            boolean AreNotificationsAvailable = false;
                             if(task.isSuccessful()){
                                 String Description, Title, to, from;
                                 for (QueryDocumentSnapshot document : task.getResult()) {
+                                    AreNotificationsAvailable = true;
                                     //Log.d(TAG, document.getId() + " => " + document.getData());
                                     Description = (String) document.get("Description");
                                     Title = (String) document.get("Title");
@@ -237,14 +276,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                                 }else{
 
                                                 }
-
-                                                /*if((metaNotes.get(m).getHashNotes().get(h).getDescription().equals(Description)
-                                                && metaNotes.get(m).getHashNotes().get(h).getTitle().equals(Title)
-                                                        && metaNotes.get(m).getHashNotes().get(h).getAuthor().equals(from) && mAuth.getUid().toString().equals(to)
-                                                ) || (metaNotes.get(m).getHashNotes().get(h).equals(mAuth.getUid()))){
-                                                    mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby testimonials")
-                                                            .icon(BitmapFromVector(getApplicationContext(), R.drawable.privatenote))).setTag(m);
-                                                }*/
                                             }
                                             if(hasFoundNotification){
                                                 mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby testimonials")
@@ -259,6 +290,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                         }
                                     }
                                 }
+                                if(AreNotificationsAvailable == false){
+                                    Log.i("Ai", "Ai");
+                                    for(int m=0;m<metaNotes.size();m++){
+                                        LatLng sydney = new LatLng((Double) metaNotes.get(m).getLatitude(), (Double) metaNotes.get(m).getLongitude());
+                                        mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby testimonials")
+                                                .icon(BitmapFromVector(getApplicationContext(), R.drawable.testemunho_icone))).setTag(m);
+                                    }
+                                }
+
+                            }else{
+                                Log.i("O outro lado", "");
+                                boolean hasPublic = false;
+                                boolean hasFoundNotification = false;
+                                Log.i("~meta", String.valueOf(metaNotes.size()));
+
                             }
                         }
                     });
