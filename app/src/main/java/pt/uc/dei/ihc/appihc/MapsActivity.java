@@ -183,6 +183,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         metaNotes.add(note);
                     }
 
+                    for(int i=0;i<metaNotes.size();i++){
+                        for(int j=0;j<metaNotes.size();j++){
+                            if(!metaNotes.get(i).equals(metaNotes.get(j))){
+                                if(metaNotes.get(i).getLatitude() == metaNotes.get(j).getLatitude() && metaNotes.get(i).getLongitude() == metaNotes.get(j).getLongitude()){
+                                    metaNotes.get(i).appendAll(metaNotes.get(j).getHashNotes());
+                                    metaNotes.remove(j);
+                                }
+                            }
+                        }
+                    }
+
+                    Log.i("Sf03-SizeNote", String.valueOf(metaNotes.size()));
+                    Log.i("Sf04-StringNote", String.valueOf(metaNotes.toString()));
+
 
                     /*for (int i = 0; i < CacheNotes.size(); i++) {
                             Log.i("getMyHistory", HistoryTitle.toString());
@@ -277,13 +291,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                                                 }
                                             }
-                                            if(hasFoundNotification){
-                                                mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby testimonials")
+                                            /*if(hasFoundNotification && (hasPublic == false)){
+                                                mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby private testimonials")
                                                         .icon(BitmapFromVector(getApplicationContext(), R.drawable.privatenote))).setTag(m);
                                             }else{
+                                                if(hasPublic){
+                                                    mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby testimonials")
+                                                            .icon(BitmapFromVector(getApplicationContext(), R.drawable.testemunho_icone))).setTag(m);
+                                                }
+                                            }*/
+
+                                            if(hasFoundNotification && (hasPublic == false)){
+                                                mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby private testimonials")
+                                                        .icon(BitmapFromVector(getApplicationContext(), R.drawable.privatenote))).setTag(m);
+                                            }else if(hasFoundNotification && hasPublic){
+                                                mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby private testimonials")
+                                                        .icon(BitmapFromVector(getApplicationContext(), R.drawable.privatenote))).setTag(m);
+                                            }else if(hasPublic && (hasFoundNotification == false)){
                                                 mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby testimonials")
                                                         .icon(BitmapFromVector(getApplicationContext(), R.drawable.testemunho_icone))).setTag(m);
                                             }
+
+
                                         }else{
                                             mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby testimonials")
                                                     .icon(BitmapFromVector(getApplicationContext(), R.drawable.testemunho_icone))).setTag(m);

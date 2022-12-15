@@ -63,6 +63,9 @@ public class LoginActivity extends AppCompatActivity {
         EditTextEmail.setText("dani@sapo.pt");
         EditTextPassword.setText("lahaine");
 
+        //nunopires@email.com
+        //nunopires
+
         //EditTextEmail.setText("cris@germany.org");
         //EditTextPassword.setText("veteran");
 

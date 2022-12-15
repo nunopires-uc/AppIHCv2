@@ -67,14 +67,26 @@ public class NoteList extends AppCompatActivity {
                         to = (String) document.get("to");
                         from = (String) document.get("from");
 
-                        for(int i=0;i<note.getHashNotes().size();i++){
-                            if(!History.contains(note.getHashNotes().get(i))){
-                                if(note.getHashNotes().get(i).isPrivacy()){
-                                    if((to.equals(mAuth.getUid())
-                                            && note.getHashNotes().get(i).getTitle().equals(Title)
-                                            && note.getHashNotes().get(i).getAuthor().equals(from)) || (note.getHashNotes().get(i).getAuthor().equals(mAuth.getUid()))){
+                        try{
+                            for(int i=0;i<note.getHashNotes().size();i++){
+                                if(!History.contains(note.getHashNotes().get(i))){
+                                    if(note.getHashNotes().get(i).isPrivacy()){
+                                        if((to.equals(mAuth.getUid())
+                                                && note.getHashNotes().get(i).getTitle().equals(Title)
+                                                && note.getHashNotes().get(i).getAuthor().equals(from)) || (note.getHashNotes().get(i).getAuthor().equals(mAuth.getUid()))){
 
 
+                                            ttl.add(note.getHashNotes().get(i).getTitle());
+                                            DescriptionShortner = note.getHashNotes().get(i).getDescription();
+                                            if(DescriptionShortner.length() > 16){
+                                                DescriptionShortner = DescriptionShortner.substring(0, 16);
+                                                DescriptionShortner += "...";
+                                            }
+                                            stl.add(DescriptionShortner);
+                                            PrivateValues.add((byte) 1);
+                                            History.add(note.getHashNotes().get(i));
+                                        }
+                                    }else{
                                         ttl.add(note.getHashNotes().get(i).getTitle());
                                         DescriptionShortner = note.getHashNotes().get(i).getDescription();
                                         if(DescriptionShortner.length() > 16){
@@ -82,32 +94,25 @@ public class NoteList extends AppCompatActivity {
                                             DescriptionShortner += "...";
                                         }
                                         stl.add(DescriptionShortner);
-                                        PrivateValues.add((byte) 1);
+                                        PrivateValues.add((byte) 0);
                                         History.add(note.getHashNotes().get(i));
                                     }
-                                }else{
-                                    ttl.add(note.getHashNotes().get(i).getTitle());
-                                    DescriptionShortner = note.getHashNotes().get(i).getDescription();
-                                    if(DescriptionShortner.length() > 16){
-                                        DescriptionShortner = DescriptionShortner.substring(0, 16);
-                                        DescriptionShortner += "...";
-                                    }
-                                    stl.add(DescriptionShortner);
-                                    PrivateValues.add((byte) 0);
-                                    History.add(note.getHashNotes().get(i));
                                 }
+
+                                Log.i("[ -> ni { i } ]", note.getHashNotes().get(i).toString());
+
+                                //.substring(0, 16);
+
+                                // ![x->@ y->@ z->@] = (x, y, z);
+                                //title[i] = note.getHashNotes().get(i).getTitle();
+                                //subtitle[i] = note.getHashNotes().get(i).getDescription();
                             }
 
-                            Log.i("[ -> ni { i } ]", note.getHashNotes().get(i).toString());
+                        }catch (Exception e){
 
-
-
-                            //.substring(0, 16);
-
-                            // ![x->@ y->@ z->@] = (x, y, z);
-                            //title[i] = note.getHashNotes().get(i).getTitle();
-                            //subtitle[i] = note.getHashNotes().get(i).getDescription();
                         }
+
+
 
                     }
 

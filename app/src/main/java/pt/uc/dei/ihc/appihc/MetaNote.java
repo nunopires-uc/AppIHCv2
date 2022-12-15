@@ -65,6 +65,10 @@ public class MetaNote implements Serializable {
         HashNotes.add(note);
     }
 
+    public void appendAll(ArrayList<DefaultNote> notes){
+        HashNotes.addAll(notes);
+    }
+
 
     public void setHashNotes(ArrayList<DefaultNote> hashNotes) {
         HashNotes = hashNotes;
