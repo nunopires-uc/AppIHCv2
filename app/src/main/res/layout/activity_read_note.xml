@@ -5,13 +5,90 @@
 
     <LinearLayout android:id="@+id/ler_testemunho"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <RelativeLayout android:id="@+id/content_container"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
-            <View   android:id="@+id/_bg__ler_testemunho"
+            <View   android:id="@+id/_bg__ler_testemunhov2"
+                android:background="@drawable/_bg__ler_testemunho_shape"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="400dp"
+                android:layout_height="800dp" />
+
+            <TextView   android:id="@+id/NoteTitle"
+                android:background="@drawable/rectangle_453_shape"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="112dp"
+                android:layout_width="328.14dp"
+                android:layout_height="44.14dp"
+                android:paddingLeft="5dp"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:paddingRight="5dp"
+                />
+
+            <View   android:id="@+id/rectangle_456"
+                android:background="@drawable/rectangle_456_shape"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="182dp"
+                android:layout_width="323dp"
+                android:layout_height="492dp" />
+
+            <TextView   android:id="@+id/NoteDescription"
+                android:background="@drawable/rectangle_453_ek1_shape"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="177dp"
+                android:layout_width="324.14dp"
+                android:layout_height="493.14dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/black"
+
+                android:paddingRight="5dp"
+                />
+
+            <View   android:id="@+id/ellipse_38"
+                android:background="@drawable/ellipse_38_shape"
+                android:layout_marginStart="30.34dp"
+                android:layout_marginTop="34.34dp"
+                android:layout_width="37.66dp"
+                android:layout_height="37.66dp" />
+
+            <ImageView android:id="@+id/vector"
+                android:src="@drawable/vector"
+                android:contentDescription="vector"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="33dp"
+                android:layout_width="37.66dp"
+                android:layout_height="37.66dp" />
+
+            <ImageView android:id="@+id/vector_ek1"
+                android:src="@drawable/vector_ek1"
+                android:contentDescription="vector_ek1"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="43dp"
+                android:layout_width="9dp"
+                android:layout_height="18dp" />
+
+            <TextView android:id="@+id/author_passenger1_date_18_10_2021"
+                android:fontFamily="Inter"
+                android:layout_gravity="center_vertical|end"
+                android:gravity="end"
+                android:textSize="15sp"
+                android:textColor="@color/rectangle_456_color"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="618dp"
+                android:layout_width="309dp"
+                android:layout_height="48.5dp"
+                android:text="@string/author_passenger1_date_18_10_2021_string"
+                />
+
+
+            <!--<View   android:id="@+id/_bg__ler_testemunho"
                 android:background="@drawable/_bg__ler_testemunho_shape"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
@@ -28,35 +105,6 @@
                 android:textStyle="bold"
                 android:textSize="15sp"
                 />
-
-            <!--<TextView android:id="@+id/experience_title_example"
-                android:fontFamily="Inter"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:textColor="@color/experience_title_example_color"
-                android:layout_marginLeft="34dp"
-                android:layout_marginTop="244dp"
-                android:layout_width="319.5dp"
-                android:layout_height="80.5dp"
-                android:text="@string/experience_title_example_string"
-                />-->
-
-            <!--<TextView
-                android:id="@+id/NoteTitle"
-                android:fontFamily="Inter"
-                android:textStyle="bold"
-                android:layout_marginLeft="34dp"
-                android:layout_marginTop="244dp"
-                android:layout_width="319.5dp"
-                android:layout_height="80.5dp"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:textSize="15sp"
-                android:text="@string/experience_title_example_string"
-                android:textColor="@color/experience_title_example_color"
-                android:background="@drawable/rectangle_453_shape"
-                />-->
-
 
             <View   android:id="@+id/rectangle_456"
                 android:background="@drawable/rectangle_456_shape"
@@ -81,22 +129,6 @@
                 android:paddingRight="5dp"
                 />
 
-            <!--<TextView
-                android:id="@+id/NoteDescription"
-                android:fontFamily="Inter"
-                android:background="@drawable/rectangle_453_ek1_shape"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:layout_marginLeft="44dp"
-                android:layout_marginTop="317.5dp"
-                android:layout_width="316.5dp"
-                android:layout_height="357.5dp"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:textColor="@color/black"
-                android:paddingRight="5dp"
-                android:text="@string/longtext"/>
-                -->
             <View
                 android:id="@+id/ellipse_38"
                 android:background="@drawable/ellipse_38_shape"
@@ -124,15 +156,15 @@
                 android:layout_width="309dp"
                 android:layout_height="48.5dp"
                 android:text="@string/author_passenger1_date_18_10_2021_string"
-                />
+                />-->
 
-            <ImageView android:id="@+id/gato_carolina"
+            <!--<ImageView android:id="@+id/gato_carolina"
                 android:src="@drawable/gato_carolina"
                 android:contentDescription="gato_carolina"
                 android:layout_marginStart="144dp"
                 android:layout_marginTop="117dp"
                 android:layout_width="98dp"
-                android:layout_height="100dp" />
+                android:layout_height="100dp" />-->
 
         </RelativeLayout>
 

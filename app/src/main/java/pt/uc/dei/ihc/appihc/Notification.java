@@ -70,7 +70,9 @@ public class Notification extends AppCompatActivity {
                             ttl.add((String) documentSnapshot.get("Title"));
 
                             if(((String) documentSnapshot.get("Description")).length() > 16){
-                                stl.add((String) ((String) documentSnapshot.get("Description")).substring(0, 16));
+                                String Ds = (String) ((String) documentSnapshot.get("Description")).substring(0, 16);
+                                Ds += "...";
+                                stl.add(Ds);
                             }else {
                                 stl.add((String) documentSnapshot.get("Description"));
                             }

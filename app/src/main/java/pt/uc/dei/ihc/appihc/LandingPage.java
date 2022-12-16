@@ -32,17 +32,17 @@ public class LandingPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         setContentView(R.layout.activity_landing_page);
 
-        progressBar = findViewById(R.id.progressBar);
-        firebaseFirestore = FirebaseFirestore.getInstance();
+        //progressBar = findViewById(R.id.progressBar);
+        //firebaseFirestore = FirebaseFirestore.getInstance();
 
         //FirebaseAuth.getInstance().getCurrentUser().getUid() -> get user
 
         //fStore.collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid()).get().addOnCompleteListener
 
-        ArrayList<DefaultNote> NearByNotes = new ArrayList<>();
+        /*ArrayList<DefaultNote> NearByNotes = new ArrayList<>();
 
         firebaseFirestore.collection("notes").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -55,16 +55,17 @@ public class LandingPage extends AppCompatActivity {
                     Toast.makeText(LandingPage.this, "Currently logged in", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
 
-        /*
+
         Start = (Button) findViewById(R.id.ButtonStart);
         Start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent k = new Intent(LandingPage.this, LoginActivity.class);
+                startActivity(k);
             }
-        });*/
+        });
     }
 }

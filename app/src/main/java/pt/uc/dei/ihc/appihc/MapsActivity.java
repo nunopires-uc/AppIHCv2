@@ -126,6 +126,127 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         CreateNoteButton = findViewById(R.id.CreateNoteButton);
         mAuth = FirebaseAuth.getInstance();
 
+
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+
+                    case R.id.notification:
+                        startActivity(new Intent(getApplicationContext(), Notification.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        CreateNoteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*
+                Log.i("++Lat", String.valueOf(Latitude));
+                Log.i("++Lon", String.valueOf(Longitude));
+
+
+                 */
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                    requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_LOCATION);
+                }else{
+                    showLocation();
+                    Log.i("->Lat", String.valueOf(Latitude));
+                    Log.i("->Lon", String.valueOf(Longitude));
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Do something after 5s = 5000ms
+                            Intent i = new Intent(MapsActivity.this, InsertNoteActivity.class);
+                            i.putExtra("Latitude", Latitude);
+                            i.putExtra("Longitude", Longitude);
+                            i.putExtra("City", City);
+                            i.putExtra("Country", Country);
+                            i.putExtra("Address", Address);
+                            startActivity(i);
+                        }
+                    }, 0);
+
+
+                }
+            }
+        });
+
+
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        try{
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        }catch (Exception e){
+            Log.e("LocationManager", e.toString());
+        }
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+
+        //Atualizar a localização
+        /*locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, location -> {
+            Latitude = location.getLatitude();
+            Longitude = location.getLongitude();
+            //Log.i("++Lat", String.valueOf(location.getLatitude()));
+            //Log.i("++Lon", String.valueOf(location.getLongitude()));
+        });*/
+
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
+
+    /**
+     * Manipulates the map once available.
+     * This callback is triggered when the map is ready to be used.
+     * This is where we can add markers or lines, add listeners or move the camera. In this case,
+     * we just add a marker near Sydney, Australia.
+     * If Google Play services is not installed on the device, the user will be prompted to install
+     * it inside the SupportMapFragment. This method will only be triggered once the user has
+     * installed Google Play services and returned to the app.
+     */
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,S
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mMap.setMyLocationEnabled(true);
+
+
+        //Isto pode dar porcaria
+        mMap.getUiSettings().setZoomGesturesEnabled(false);
+
         db = FirebaseFirestore.getInstance();
         db.collection("notes").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
@@ -188,14 +309,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             if(!metaNotes.get(i).equals(metaNotes.get(j))){
                                 if(metaNotes.get(i).getLatitude() == metaNotes.get(j).getLatitude() && metaNotes.get(i).getLongitude() == metaNotes.get(j).getLongitude()){
                                     metaNotes.get(i).appendAll(metaNotes.get(j).getHashNotes());
-                                    metaNotes.remove(j);
+
                                 }
                             }
                         }
                     }
-
-                    Log.i("Sf03-SizeNote", String.valueOf(metaNotes.size()));
-                    Log.i("Sf04-StringNote", String.valueOf(metaNotes.toString()));
 
 
                     /*for (int i = 0; i < CacheNotes.size(); i++) {
@@ -320,14 +438,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                     }
                                 }
                                 if(AreNotificationsAvailable == false){
-                                    Log.i("Ai", "Ai");
+                                    Log.i("Aixx", "Ai");
                                     for(int m=0;m<metaNotes.size();m++){
                                         LatLng sydney = new LatLng((Double) metaNotes.get(m).getLatitude(), (Double) metaNotes.get(m).getLongitude());
                                         mMap.addMarker(new MarkerOptions().position(sydney).title((String) "Nearby testimonials")
                                                 .icon(BitmapFromVector(getApplicationContext(), R.drawable.testemunho_icone))).setTag(m);
                                     }
                                 }
-
                             }else{
                                 Log.i("O outro lado", "");
                                 boolean hasPublic = false;
@@ -346,124 +463,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         });
-
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(), MapsActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), Profile.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-
-                    case R.id.notification:
-                        startActivity(new Intent(getApplicationContext(), Notification.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                }
-                return false;
-            }
-        });
-
-        CreateNoteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*
-                Log.i("++Lat", String.valueOf(Latitude));
-                Log.i("++Lon", String.valueOf(Longitude));
-
-
-                 */
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-                    requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_LOCATION);
-                }else{
-                    showLocation();
-                    Log.i("->Lat", String.valueOf(Latitude));
-                    Log.i("->Lon", String.valueOf(Longitude));
-                    final Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            // Do something after 5s = 5000ms
-                            Intent i = new Intent(MapsActivity.this, InsertNoteActivity.class);
-                            i.putExtra("Latitude", Latitude);
-                            i.putExtra("Longitude", Longitude);
-                            i.putExtra("City", City);
-                            i.putExtra("Country", Country);
-                            i.putExtra("Address", Address);
-                            startActivity(i);
-                        }
-                    }, 0);
-
-
-                }
-            }
-        });
-
-
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        try{
-            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        }catch (Exception e){
-            Log.e("LocationManager", e.toString());
-        }
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-
-        //Atualizar a localização
-        /*locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, location -> {
-            Latitude = location.getLatitude();
-            Longitude = location.getLongitude();
-            //Log.i("++Lat", String.valueOf(location.getLatitude()));
-            //Log.i("++Lon", String.valueOf(location.getLongitude()));
-        });*/
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-    }
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,S
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        mMap.setMyLocationEnabled(true);
-
-        //Isto pode dar porcaria
-        mMap.getUiSettings().setZoomGesturesEnabled(false);
 
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {

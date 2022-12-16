@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class Profile extends AppCompatActivity {
     ArrayList<QueryDocumentSnapshot> UserNotes = new ArrayList<QueryDocumentSnapshot>();
     TextView EmailUserField;
     BottomNavigationView bottomNavigationView;
+    ImageView ProfilePicture;
     ImageButton settings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,8 @@ public class Profile extends AppCompatActivity {
         //getSupportActionBar().hide();
         setContentView(R.layout.activity_profile);
 
+        ProfilePicture = findViewById(R.id.ProfilePicture);
+        ProfilePicture.setImageResource(R.drawable.profile_image);
 
         settings = findViewById(R.id.Settings);
         listView = findViewById(R.id.listview_id);
@@ -76,7 +80,17 @@ public class Profile extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 ttl.add((String) document.get("Title"));
-                                stl.add((String) document.get("Description"));
+
+                                String DescriptionShortner = (String) document.get("Description");
+                                if(DescriptionShortner.length() > 16){
+                                    DescriptionShortner = DescriptionShortner.substring(0, 16);
+                                    DescriptionShortner += "...";
+                                }
+
+                                stl.add(DescriptionShortner);
+
+
+
 
                                 DefaultNote currentNote = new DefaultNote();
                                 currentNote.setAuthor((String) document.get("Author"));
