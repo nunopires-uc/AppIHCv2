@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- rectangle_453 from your XD file. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shape="rectangle" >
+	<stroke android:color="#333333" android:width="0.57dp" />
+	<solid android:color="@color/rectangle_453_color" />
+</shape>
+

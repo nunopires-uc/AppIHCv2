@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- ragnarok strings -->
+
+	<string name="app_name">interface</string>
+	<string name="ek_img_content">ExportKit Image</string>
+	<string name="experience_title_3_string">  Experience title 3</string>
+	<string name="lorem_ipsum_is_simply_dummy_text_of_the____string">Lorem Ipsum is simply dummy text of the...</string>
+</resources>

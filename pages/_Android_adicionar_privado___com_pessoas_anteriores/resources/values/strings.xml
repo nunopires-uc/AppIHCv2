@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- adicionar_privado___com_pessoas_anteriores strings -->
+
+	<string name="app_name">interface</string>
+	<string name="ek_img_content">ExportKit Image</string>
+	<string name="add_people_by_email____string">  Add people by email...</string>
+	<string name="add_to_post_string">Add to post</string>
+	<string name="shared_with_before_string">Shared with before</string>
+	<string name="passenger1_email_com_string">passenger1@email.com</string>
+	<string name="passenger2_email_com_string">passenger2@email.com</string>
+	<string name="passenger3_email_com_string">passenger3@email.com</string>
+</resources>

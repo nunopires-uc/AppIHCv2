@@ -1,0 +1,81 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+	<!-- 
+	/*
+	 *	This content is generated from the API File Info.
+	 *	(Alt+Shift+Ctrl+I).
+	 *
+	 *	@desc 		
+	 *	@file 		ragnarok
+	 *	@date 		Saturday 03rd of December 2022 02:55:31 PM
+	 *	@title 		interface
+	 *	@author 	
+	 *	@keywords 	
+	 *	@generator 	Export Kit v1.3.figma
+	 *
+	 */
+	-->
+	<ScrollView android:id="@+id/ragnarok" 
+		android:layout_width="wrap_content" 
+		android:layout_height="match_parent" >
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+			<View   android:id="@+id/_bg__ragnarok"
+				android:background="@drawable/_bg__ragnarok_shape"
+				 android:layout_marginStart="0dp"
+				android:layout_marginTop="0dp"
+				android:layout_width="385dp"
+				android:layout_height="800dp" />
+
+			<View   android:id="@+id/rectangle_456"
+				android:background="@drawable/rectangle_456_shape"
+				 android:layout_marginStart="23.26dp"
+				android:layout_marginTop="281dp"
+				android:layout_width="343.74dp"
+				android:layout_height="65dp" />
+
+			<View   android:id="@+id/rectangle_453"
+				android:background="@drawable/rectangle_453_shape"
+				 android:layout_marginStart="19dp"
+				android:layout_marginTop="276dp"
+				android:layout_width="344.88dp"
+				android:layout_height="66.14dp" />
+
+			<TextView android:id="@+id/experience_title_3"
+				android:fontFamily="Inter"
+				android:textStyle="bold"
+				android:textSize="15sp"
+				android:textColor="@color/rectangle_456_color"
+				android:layout_marginLeft="24dp"
+				android:layout_marginTop="265dp"
+				android:layout_width="319.5dp"
+				android:layout_height="80.5dp"
+				android:text="@string/experience_title_3_string"
+				 />
+
+			<TextView android:id="@+id/lorem_ipsum_is_simply_dummy_text_of_the___"
+				android:fontFamily="Inter"
+				android:textSize="13sp"
+				android:textColor="@color/rectangle_456_color"
+				android:layout_marginLeft="32dp"
+				android:layout_marginTop="284dp"
+				android:layout_width="317.5dp"
+				android:layout_height="79.5dp"
+				android:text="@string/lorem_ipsum_is_simply_dummy_text_of_the____string"
+				 />
+
+			<ImageView android:id="@+id/vector"
+				android:src="@drawable/vector"
+				android:contentDescription="vector"
+				 android:layout_marginStart="340dp"
+				android:layout_marginTop="302dp"
+				android:layout_width="9dp"
+				android:layout_height="18dp" />
+
+		</RelativeLayout>
+
+	</ScrollView>
+</HorizontalScrollView>

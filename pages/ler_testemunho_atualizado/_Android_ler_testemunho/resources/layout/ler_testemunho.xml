@@ -1,0 +1,124 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+	<!-- 
+	/*
+	 *	This content is generated from the API File Info.
+	 *	(Alt+Shift+Ctrl+I).
+	 *
+	 *	@desc 		
+	 *	@file 		ler_testemunho
+	 *	@date 		Sunday 04th of December 2022 08:34:07 PM
+	 *	@title 		interface
+	 *	@author 	
+	 *	@keywords 	
+	 *	@generator 	Export Kit v1.3.figma
+	 *
+	 */
+	-->
+	<ScrollView android:id="@+id/ler_testemunho" 
+		android:layout_width="wrap_content" 
+		android:layout_height="match_parent" >
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+			<View   android:id="@+id/_bg__ler_testemunho"
+				android:background="@drawable/_bg__ler_testemunho_shape"
+				 android:layout_marginStart="0dp"
+				android:layout_marginTop="0dp"
+				android:layout_width="385dp"
+				android:layout_height="800dp" />
+
+			<View   android:id="@+id/rectangle_453"
+				android:background="@drawable/rectangle_453_shape"
+				 android:layout_marginStart="30dp"
+				android:layout_marginTop="255dp"
+				android:layout_width="328.14dp"
+				android:layout_height="44.14dp" />
+
+			<TextView android:id="@+id/experience_title_example"
+				android:fontFamily="Inter"
+				android:textStyle="bold"
+				android:textSize="15sp"
+				android:textColor="@color/experience_title_example_color"
+				android:layout_marginLeft="34dp"
+				android:layout_marginTop="244dp"
+				android:layout_width="319.5dp"
+				android:layout_height="80.5dp"
+				android:text="@string/experience_title_example_string"
+				 />
+
+			<View   android:id="@+id/rectangle_456"
+				android:background="@drawable/rectangle_456_shape"
+				 android:layout_marginStart="35dp"
+				android:layout_marginTop="324dp"
+				android:layout_width="323dp"
+				android:layout_height="386dp" />
+
+			<View   android:id="@+id/rectangle_453_ek1"
+				android:background="@drawable/rectangle_453_ek1_shape"
+				 android:layout_marginStart="31dp"
+				android:layout_marginTop="320dp"
+				android:layout_width="324.14dp"
+				android:layout_height="387.14dp" />
+
+			<TextView android:id="@+id/lorem_ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry__lorem_ipsum_has_been_the_industry_s_standard_dummy_text_ever_since_the_1500s__when_an_unknown_printer_took_a_galley_of_type_and_scrambled_it_to_make_a_type_specimen_book__it_has_survived_not_only_five_centuries__but_also_the_leap_into_electronic_typesetting__remaining_essentially_unchanged__it_was_popularised_in_the_1960s_with_the_release_of_letraset_sheets_containing_lorem_ipsum_passages__and_more_recently_with_desktop_publishing_software_like_aldus_pagemaker_including_versions_of_lorem_ipsum_"
+				android:fontFamily="Inter"
+				android:textSize="15sp"
+				android:textColor="@color/experience_title_example_color"
+				android:layout_marginLeft="44dp"
+				android:layout_marginTop="317.5dp"
+				android:layout_width="316.5dp"
+				android:layout_height="357.5dp"
+				android:text="@string/lorem_ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry__lorem_ipsum_has_been_the_industry_s_standard_dummy_text_ever_since_the_1500s__when_an_unknown_printer_took_a_galley_of_type_and_scrambled_it_to_make_a_type_specimen_book__it_has_survived_not_only_five_centuries__but_also_the_leap_into_electronic_typesetting__remaining_essentially_unchanged__it_was_popularised_in_the_1960s_with_the_release_of_letraset_sheets_containing_lorem_ipsum_passages__and_more_recently_with_desktop_publishing_software_like_aldus_pagemaker_including_versions_of_lorem_ipsum__string"
+				 />
+
+			<View   android:id="@+id/ellipse_38"
+				android:background="@drawable/ellipse_38_shape"
+				 android:layout_marginStart="30.34dp"
+				android:layout_marginTop="34.34dp"
+				android:layout_width="37.66dp"
+				android:layout_height="37.66dp" />
+
+			<ImageView android:id="@+id/vector"
+				android:src="@drawable/vector"
+				android:contentDescription="vector"
+				 android:layout_marginStart="29dp"
+				android:layout_marginTop="33dp"
+				android:layout_width="37.66dp"
+				android:layout_height="37.66dp" />
+
+			<ImageView android:id="@+id/vector_ek1"
+				android:src="@drawable/vector_ek1"
+				android:contentDescription="vector_ek1"
+				 android:layout_marginStart="42dp"
+				android:layout_marginTop="43dp"
+				android:layout_width="9dp"
+				android:layout_height="18dp" />
+
+			<TextView android:id="@+id/author_passenger1_date_18_10_2021"
+				android:fontFamily="Inter"
+				android:layout_gravity="center_vertical|end"
+				android:gravity="end"
+				android:textSize="15sp"
+				android:textColor="@color/experience_title_example_color"
+				android:layout_marginLeft="42dp"
+				android:layout_marginTop="650dp"
+				android:layout_width="309dp"
+				android:layout_height="48.5dp"
+				android:text="@string/author_passenger1_date_18_10_2021_string"
+				 />
+
+			<ImageView android:id="@+id/_20150122_171355_1___co_pia_1"
+				android:src="@drawable/_20150122_171355_1___co_pia_1"
+				android:contentDescription="_20150122_171355_1___co_pia_1"
+				 android:layout_marginStart="144dp"
+				android:layout_marginTop="117dp"
+				android:layout_width="98dp"
+				android:layout_height="100dp" />
+
+		</RelativeLayout>
+
+	</ScrollView>
+</HorizontalScrollView>
